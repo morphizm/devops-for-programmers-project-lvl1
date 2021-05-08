@@ -1,0 +1,11 @@
+version: "3.9"
+
+x-shared-volumes: &shared-volumes
+  - .:/app
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    volumes: *shared-volumes

@@ -35,7 +35,7 @@ jobs:
           tags: ${{ env.APP_IMAGE_NAME }}:cached
 
       - name: Check
-        run: docker-compose --file docker-compose.yml up --abort-on-container-exit
+        run: docker-compose --file docker-compose.prod.yml up --abort-on-container-exit
 
       - name: Push
         uses: docker/build-push-action@v2
