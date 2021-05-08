@@ -1,0 +1,10 @@
+version: "3.9"
+
+x-shared-volumes: &shared-volumes
+  - .:/app
+
+services:
+  app:
+    build:
+      context: .
+    volumes: *shared-volumes

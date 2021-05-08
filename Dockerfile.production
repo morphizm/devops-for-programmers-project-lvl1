@@ -1,0 +1,17 @@
+FROM node:14.6
+
+WORKDIR /app
+ARG PACKAGES="curl vim git bash"
+
+RUN apt-get -y update && apt-get -y upgrade && apt-get -y install $PACKAGES
+
+# RUN npm i -g @nodosjs/cli@0.0.55
+
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+RUN npm install
+
+COPY . .
+
+CMD npm start
