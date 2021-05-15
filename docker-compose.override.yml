@@ -7,9 +7,26 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: nodos server -h '0.0.0.0'
+    depends_on:
+      - db
 
   caddy:
     ports:
       - 80:80
       - 443:443
-    image: 2.3.0-alpine
+    image: caddy:2.3.0-alpine
+    volumes:
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+
+volumes:
+  caddy_data:
+  caddy_config:

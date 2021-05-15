@@ -18,3 +18,9 @@ docker-prod-run:
 
 build-prod:
 	docker build -f Dockerfile.production -t docker.io/morphizm/nodos-prod .
+
+compose-start:
+	docker-compose up
+
+compose-bash:
+	docker-compose run --rm app bash
