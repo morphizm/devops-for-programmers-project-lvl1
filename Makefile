@@ -27,3 +27,7 @@ compose-start:
 
 compose-bash:
 	docker-compose run --rm app bash
+
+# $ docker run --rm -i -v /your/path/to/hadolint.yaml:/.config/hadolint.yaml hadolint/hadolint < Dockerfile
+hadolint:
+	docker run --platform linux/amd64 --rm -i hadolint/hadolint < Dockerfile
