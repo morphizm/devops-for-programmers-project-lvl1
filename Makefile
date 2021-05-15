@@ -4,6 +4,9 @@ server:
 test:
 	npm -s test
 
+lint:
+	npx eslint .
+
 build:
 	docker build -t nodos .
 

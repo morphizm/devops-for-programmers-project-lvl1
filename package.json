@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@nodosjs/jest-environment": "^0.0.57",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
     "eslint": "^7.22.0",
     "eslint-plugin-babel": "^5.3.1",
