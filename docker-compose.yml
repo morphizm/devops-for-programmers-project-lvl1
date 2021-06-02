@@ -9,3 +9,7 @@ services:
       context: .
       dockerfile: Dockerfile.production
     volumes: *shared-volumes
+    working_dir: /app
+    stdin_open: true
+    tty: true
+
