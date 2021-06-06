@@ -12,7 +12,5 @@ COPY package-lock.json package-lock.json
 
 RUN npm ci
 
-COPY . .
-
 EXPOSE 8080
 CMD ["nodos", "server", "-h", "'0.0.0.0'"]

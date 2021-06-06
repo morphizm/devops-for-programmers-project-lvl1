@@ -22,11 +22,6 @@ services:
       - caddy_data:/data
       - caddy_config:/config
 
-  db:
-    image: postgres:13-alpine
-    environment:
-      POSTGRES_HOST_AUTH_METHOD: trust
-
 volumes:
   caddy_data:
   caddy_config:

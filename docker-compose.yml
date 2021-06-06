@@ -14,5 +14,10 @@ services:
     stdin_open: true
     tty: true
 
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+
 volumes:
   node_modules:
