@@ -10,6 +10,16 @@ env:
   APP_IMAGE_NAME: docker.io/morphizm/nodos-prod
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build docker
+        uses: make compose-build
+      - name: lint
+        uses: make compose-lint
+      - name: test
+        uses: make compose-test
   build:
     runs-on: ubuntu-latest
     steps:
@@ -33,12 +43,3 @@ jobs:
           cache-to: type=inline
           push: true
           tags: ${{ env.APP_IMAGE_NAME }}:latest
-  test:
-    runs-on: ubuntu-latest
-      - uses: actions/checkout@v2
-      - name: Build docker
-        uses: make compose-build
-      - name: lint
-        uses: make compose-lint
-      - name: test
-        uses: make compose-test
