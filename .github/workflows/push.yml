@@ -15,11 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build docker
-        uses: make compose-build
+        run: make compose-build
       - name: lint
-        uses: make compose-lint
+        run: make compose-lint
       - name: test
-        uses: make compose-test
+        run: make compose-test
   build:
     runs-on: ubuntu-latest
     steps:
